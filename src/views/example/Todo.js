@@ -12,22 +12,21 @@ class myexample extends React.Component {
   };
 
   handleEdit = (event, Todo) => {
-    let arrTodo = this.state['arrTodo'];
-    arrTodo = arrTodo.map((item) => {
-      if (item.id === Todo.id) {
-        item.Todo = event.target.value;
-      }
-    });
     this.setState({
-      arrTodo: arrTodo,
       editTodo: {
         id: Todo.id,
         Todo: event.target.value
       }
-    });
+    })
   };
 
   handleEnterTodo = () => {
+    let arrTodo = this.state['arrTodo'];
+    arrTodo = arrTodo.map((item) => {
+      if (item.id === this.state['editTodo'].id) {
+        item.Todo = this.state['editTodo'].Todo;
+      }
+    });
     this.setState({
       statusEdit: false
     });

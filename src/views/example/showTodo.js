@@ -40,13 +40,15 @@ class showTodo extends React.Component {
                           <input
                             style={{ borderRadius: '12px', marginRight: '10px' }}
                             onChange={(event) => this.handleEdit(event, item)}
-                            value={this.props.editTodo.Todo}></input>
+                            value={this.props.editTodo.Todo}
+                          ></input>
                         </span>
                         <button
                           type="button"
                           className="btn btn-primary"
                           onClick={() => this.handleEnterTodo(item)}
-                          style={{ marginRight: '10px' }}>
+                          style={{ marginRight: '10px' }}
+                        >
                           Enter
                         </button>
                       </>
@@ -54,14 +56,15 @@ class showTodo extends React.Component {
                       <CardEdit
                         index={index}
                         item={item}
-                        handleEditTodo={this.handleEditTodo}></CardEdit>
+                        handleEditTodo={this.handleEditTodo}
+                      ></CardEdit>
                     )}
-                  </>
-                )}
+                  </>)}
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={() => this.handleDelete(item)}>
+                  onClick={() => this.handleDelete(item)}
+                >
                   Delete
                 </button>
               </div>
