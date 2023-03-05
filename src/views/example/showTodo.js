@@ -30,15 +30,16 @@ class showTodo extends React.Component {
                   <CardEdit
                     index={index}
                     item={item}
-                    handleEditTodo={this.handleEditTodo}></CardEdit>
+                    handleEditTodo={this.handleEditTodo}
+                  ></CardEdit>
                 ) : (
                   <>
                     {item.id === this.props.editTodo.id ? (
                       <>
                         <span>
-                          {index + 1} --{' '}
+                          {index + 1}
                           <input
-                            style={{ borderRadius: '12px', marginRight: '10px' }}
+                            style={{ borderRadius: '12px', marginRight: '10px', width: '100%' }}
                             onChange={(event) => this.handleEdit(event, item)}
                             value={this.props.editTodo.Todo}
                           ></input>
@@ -59,7 +60,8 @@ class showTodo extends React.Component {
                         handleEditTodo={this.handleEditTodo}
                       ></CardEdit>
                     )}
-                  </>)}
+                  </>
+                )}
                 <button
                   type="button"
                   className="btn btn-primary"

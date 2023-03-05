@@ -17,16 +17,20 @@ class myexample extends React.Component {
         id: Todo.id,
         Todo: event.target.value
       }
-    })
+    });
   };
 
   handleEnterTodo = () => {
-    let arrTodo = this.state['arrTodo'];
-    arrTodo = arrTodo.map((item) => {
-      if (item.id === this.state['editTodo'].id) {
-        item.Todo = this.state['editTodo'].Todo;
-      }
-    });
+    if (this.state['editTodo'].Todo !== '') {
+      let arrTodo = this.state['arrTodo'];
+      arrTodo = arrTodo.map((item) => {
+        if (item.id === this.state['editTodo'].id) {
+          item.Todo = this.state['editTodo'].Todo;
+        }
+      });
+    } else {
+      alert('Missing values');
+    }
     this.setState({
       statusEdit: false
     });
@@ -96,7 +100,8 @@ class myexample extends React.Component {
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={() => this.handleSubmit()}>
+                  onClick={() => this.handleSubmit()}
+                >
                   Submit
                 </button>
                 <hr size="2"></hr>
@@ -109,7 +114,8 @@ class myexample extends React.Component {
               handleDelete={this.handleDelete}
               handleEnterTodo={this.handleEnterTodo}
               handleEdit={this.handleEdit}
-              statusEdit={this.state['statusEdit']}></ShowTodo>
+              statusEdit={this.state['statusEdit']}
+            ></ShowTodo>
           </div>
         </form>
       </>

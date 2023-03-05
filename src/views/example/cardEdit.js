@@ -12,7 +12,8 @@ class cardEdit extends React.Component {
           type="button"
           className="btn btn-primary"
           onClick={() => this.props.handleEditTodo(this.props.item)}
-          style={{ marginRight: '10px' }}>
+          style={{ marginRight: '10px' }}
+        >
           Edit
         </button>
       </>
